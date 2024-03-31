@@ -3,7 +3,7 @@ from cryptography.fernet import Fernet
 #from multiprocessing import Pool
 
 PROGNAME = 'Cryplock'
-VERSION = '1.0_beta'
+VERSION = '1.1.2_beta'
 
 def showhelp():
     print ("Help for "+PROGNAME+":")

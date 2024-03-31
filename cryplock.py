@@ -19,6 +19,7 @@ print ("Copyright (c) Arijit Kumar Das (Github: @ArijitKD).")
 print ("By using this software, you agree to the terms of the MIT License.\n")
     
 KEY_FILE = ""
+TASK = ""
 if (len(sys.argv) == 1):
     print ("No options specified. Use -help to see the list of available options.")
     raise SystemExit
@@ -201,7 +202,7 @@ if (TASK == "encrypt"):
             print (str(operated_file_count)+" out of "+str(len(target_files))+" files were successfully encrypted (ETA: %0.2f seconds)."%(time.time()-init_time,))
     if (show_keywrite_msg):
         print ("Key file has been generated at", KEY_FILE+" and is required for future decryption. Keep it safely.")
-else:
+elif (TASK == "decrypt"):
     if (KEY_FILE == ""):
         print ("Key file not specified for decryption. Use -keyfile=<keyfilepath> to specify the key file.")
         raise SystemExit
@@ -267,3 +268,8 @@ else:
             print ("No files were decrypted.")
         else:
             print (str(operated_file_count)+" out of "+str(len(target_files))+" files were successfully decrypted (ETA: %0.2f seconds)."%(time.time()-init_time,))
+else:
+    if (TASK == ""):
+        print ("Please specify an option: -encrypt or -decrypt.")
+    else:
+        print ("Unknown task: \""+TASK+"\".")

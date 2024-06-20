@@ -92,7 +92,7 @@ args = sys.argv[1::]
 for i in range(len(args)):
     args[i] = args[i].replace("\\", "/")
 
-if (len(args) == 1):
+if (len(args) == 0):
     print ("No options specified. Use -help to see the list of available options.")
     raise SystemExit
 
